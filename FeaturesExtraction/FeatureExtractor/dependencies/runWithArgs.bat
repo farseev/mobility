@@ -1,0 +1,1 @@
+FeatureExtractor.exe -db mongodb://<databaseAdress>:<databasePort> <databaseName> <tableWithUserIdsName> <tableWithTweetsName> <anything> <anything> <anything> <anything>

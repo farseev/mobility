@@ -1,0 +1,58 @@
+﻿<Window x:Class="FeatureExtractor.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Feature extractor"
+        Closing="Window_Closing"
+        Height="415" Width="525">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="148*"/>
+            <ColumnDefinition Width="369*"/>
+        </Grid.ColumnDefinitions>
+        <TabControl x:Name="tabControlMain" Margin="10" Grid.ColumnSpan="2">
+            <TabItem Header="NUSMultisource">
+                <Grid Background="#FFE5E5E5">
+                    <TextBox x:Name="TextBoxUserTweetsOutputPath" HorizontalAlignment="Left" Height="23" Margin="165,10,0,0" TextWrapping="Wrap" Text="{Binding Source={StaticResource Settings}, Path=Default.TweetsFilesDirectoryPath}" VerticalAlignment="Top" Width="312"/>
+                    <Button x:Name="ButtonUserTweetFiles" Content="Process text data" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="150" Click="ButtonUserTweetFiles_Click"/>
+                    <TextBox x:Name="TextBoxTextFeatures" HorizontalAlignment="Left" Height="23" Margin="165,38,0,0" TextWrapping="Wrap" Text="{Binding Default.TableTextFeatures, Source={StaticResource Settings}}" VerticalAlignment="Top" Width="312"/>
+                    <CheckBox x:Name="CheckBoxExtractTextFeatures" Content="Extract Features" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" Width="97" Height="23"/>
+                    <TextBox x:Name="TextBoxImagesFilesFolder" IsEnabled="true"  HorizontalAlignment="Left" Height="23" Margin="165,66,0,0" TextWrapping="Wrap" Text="{Binding Default.ImagesFilesDirectoryPath, Source={StaticResource Settings}}" VerticalAlignment="Top" Width="312"/>
+                    <Button x:Name="ButtonCreateTweetsPathFile" IsEnabled="true"  Content="Create images path file" HorizontalAlignment="Left" Margin="10,187,0,0" VerticalAlignment="Top" Width="150" Click="ButtonCreateTweetsPathFile_Click"/>
+                    <Button x:Name="ButtonConsolidateOutputFiles" IsEnabled="true"  Content="Consolidate concept files" HorizontalAlignment="Left" Margin="10,212,0,0" VerticalAlignment="Top" Width="150" Click="ButtonConsolidateOutputFiles_Click"/>
+                    <TextBox x:Name="TextBoxConceptFeatures" IsEnabled="true"  HorizontalAlignment="Left" Height="23" Margin="165,94,0,0" TextWrapping="Wrap" Text="{Binding Default.TableConceptFeatures, Source={StaticResource Settings}}" VerticalAlignment="Top" Width="312"/>
+                    <Button x:Name="ButtonCreateCategoryWordDocuments" IsEnabled="true"  Content="Create category documents and category features
+                            " HorizontalAlignment="Left" Margin="10,237,0,0" VerticalAlignment="Top" Width="274" Click="ButtonCreateCategoryWordDocuments_Click" Height="21" RenderTransformOrigin="0.5,1.156"/>
+                    <TextBox x:Name="TextBoxCategoriesFilesFolder" IsEnabled="true"  HorizontalAlignment="Left" Height="23" Margin="165,120,0,0" TextWrapping="Wrap" Text="{Binding Default.CategoriesFilesDirectoryPath, Source={StaticResource Settings}}" VerticalAlignment="Top" Width="312"/>
+                    <TextBox x:Name="TextBoxCategoryFeatures" IsEnabled="true"  HorizontalAlignment="Left" Height="23" Margin="165,146,0,0" TextWrapping="Wrap" Text="{Binding Default.TableCategoryFeatures, Source={StaticResource Settings}}" VerticalAlignment="Top" Width="312"/>
+                    <CheckBox x:Name="CheckBoxExtractTextFeaturesEachTweet" Content="Each " HorizontalAlignment="Left" Margin="112,41,0,0" VerticalAlignment="Top" Width="48" Height="23"/>
+                    <CheckBox x:Name="CheckBoxNormaliseFeatures" Content="Normalise Features " HorizontalAlignment="Left" Margin="10,61,0,0" VerticalAlignment="Top" Width="141" Height="23"/>
+                    <Calendar x:Name="Calendar" IsEnabled="true" HorizontalAlignment="Left" Margin="302,193,0,0" VerticalAlignment="Top" Height="134" DisplayDate="2014-11-20"/>
+                    <Label Content="Test set separation date" HorizontalAlignment="Center" Margin="302,174,10,0" VerticalAlignment="Top" Width="175"/>
+                    <CheckBox x:Name="CheckBoxDoNotUseUsersTable" Content="Do not use users table " HorizontalAlignment="Left" Margin="10,78,0,0" VerticalAlignment="Top" Width="141" Height="23"/>
+                    <CheckBox x:Name="CheckBoxSplitDataByDate" Content="Split data by date" HorizontalAlignment="Left" Margin="10,97,0,0" VerticalAlignment="Top" Width="113" Height="23"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="NUSSence" IsEnabled="true" >
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="41*"/>
+                        <ColumnDefinition Width="446*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button Name="ComputeEndomondoGroundTruth" Content="Obesity Ground Truth" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="145" Grid.ColumnSpan="2" Click="ComputeEndomondoGroundTruth_Click"/>
+                    <TextBox HorizontalAlignment="Left" Name="ObesityGroundTruthTable" Height="23" Margin="119,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="317" Text="{Binding Source={StaticResource Settings}, Path=Default.TableObesityGroundTruth}" Grid.Column="1"/>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="tabItemLog" Header="Log">
+                <Grid Background="#FFE5E5E5">
+                    <RichTextBox x:Name="RichTextBoxLog" Margin="10" VerticalScrollBarVisibility="Auto">
+                        <FlowDocument>
+                            <Paragraph>
+                                <Run Text=""/>
+                            </Paragraph>
+                        </FlowDocument>
+                    </RichTextBox>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

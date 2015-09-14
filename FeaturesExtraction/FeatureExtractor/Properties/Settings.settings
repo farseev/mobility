@@ -1,0 +1,27 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="FeatureExtractor.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="TweetsFilesDirectoryPath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">D:\Research\Data\Tweets</Value>
+    </Setting>
+    <Setting Name="TableTextFeatures" Type="System.String" Scope="User">
+      <Value Profile="(Default)">textFeaturesSingapore</Value>
+    </Setting>
+    <Setting Name="ImagesFilesDirectoryPath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">D:\Research\VisualData\pics1</Value>
+    </Setting>
+    <Setting Name="TableConceptFeatures" Type="System.String" Scope="User">
+      <Value Profile="(Default)">conceptFeaturesSingapore</Value>
+    </Setting>
+    <Setting Name="CategoriesFilesDirectoryPath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">D:\Research\Data\Categories</Value>
+    </Setting>
+    <Setting Name="TableCategoryFeatures" Type="System.String" Scope="User">
+      <Value Profile="(Default)">categoryFeaturesSingapore</Value>
+    </Setting>
+    <Setting Name="TableObesityGroundTruth" Type="System.String" Scope="User">
+      <Value Profile="(Default)">obesityGroundTruth</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
