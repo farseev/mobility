@@ -1,0 +1,7 @@
+Import('env')
+
+SConscript(['libfm/SConscript'], exports='env')
+
+build_env = env.Clone()
+
+build_env.Program('baseline_main', ['baseline.cpp', 'fm.cpp'])

@@ -1,0 +1,27 @@
+import os
+
+path = os.path.abspath('.')
+
+env = Environment(ENV = os.environ)
+
+if ARGUMENTS.get('verbose') != '1':
+	env['CCCOMSTR']      = "Compiling $TARGET"
+	env['FORTRANCOMSTR'] = "Compiling $TARGET"
+	env['CXXCOMSTR']     = "Compiling $TARGET"
+	env['ARCOMSTR']      = "Archiving $TARGET"
+	env['RANLIBCOMSTR']  = "Indexing  $TARGET"
+	env['LINKCOMSTR']    = "Linking   $TARGET"
+	env['SHCCCOMSTR']    = "Compiling $TARGET"
+	env['SHCXXCOMSTR']   = "Compiling $TARGET"
+	env['SHLINKCOMSTR']  = "Linking   $TARGET"
+
+#env.Replace(CXX = ['g++-5'])
+env.Append(CCFLAGS = ['-O2'])
+env.Append(CCFLAGS = ['-g'])
+#env.Append(FORTRANFLAGS = ['-O2'])
+#env.Append(LINKFLAGS = ['-fopenmp'])
+
+env.Append(CPPPATH = [path])
+env.Append(CPPPATH = [path + '/include'])
+
+SConscript('src/SConscript', exports = 'env')

@@ -1,0 +1,12 @@
+{
+	"train_data": "./run/CategoriesFeatures/categoryFeaturesLondonTrainAnonymized.csv",
+	"test_data": "./run/CategoriesFeatures/categoryFeaturesLondonTestAnonymized.csv",
+	"method": "mcmc",
+	"init_stdev": 0.1,
+	"dim": [1, 1, 100],
+	"regular": [0.1, 0.1, 0.5],
+	"iter": 30,
+	"task": "regression",
+	"pred_output": false,
+	"pred": "predLondon.txt"
+}

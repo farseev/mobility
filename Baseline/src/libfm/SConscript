@@ -1,0 +1,7 @@
+Import('env')
+
+build_env = env.Clone()
+
+build_env.Program('libfm_main', 'libfm.cpp')
+build_env.Program('convert_main', 'convert.cpp')
+build_env.Program('transpose_main', 'transpose.cpp')
